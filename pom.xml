@@ -1,10 +1,27 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>mqttpublisher</groupId>
-  <artifactId>mqttpublisher</artifactId>
+  <groupId>mqttconsumer</groupId>
+  <artifactId>mqttconsumer</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>mqttpublisher</name>
-  <description>mqttpublisher</description>
+  <name>mqttconsumer</name>
+  <description>mqttconsumer</description>
+  <build>
+  <plugins>
+    <plugin>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>mqtt.Subscriber</mainClass>
+          </manifest>
+        </archive>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+      </configuration>
+    </plugin>
+   </plugins>
+  </build>
   
   <repositories>
     <repository>
@@ -12,7 +29,6 @@
         <url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
     </repository>
   </repositories>
-  
   <dependencies>
     <dependency>
         <groupId>org.eclipse.paho</groupId>
@@ -20,5 +36,10 @@
         <version>1.2.1</version>
     </dependency>
   </dependencies>
+  
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
 
 </project>

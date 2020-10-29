@@ -49,10 +49,8 @@ public void connectionLost(Throwable cause) {
 }
 
 public void messageArrived(String topic, MqttMessage message) throws Exception {
-	
-	System.out.println("Subscriber1 received message :" + message.toString());
-	Thread.sleep(3000);
-	
+	System.out.println("Message :" + message.toString());
+	Thread.sleep(1000);
 }
 
 public void deliveryComplete(IMqttDeliveryToken token) {
